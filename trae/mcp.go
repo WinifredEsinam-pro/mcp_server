@@ -21,7 +21,7 @@ func main() {
 		mcp.WithDescription("Add two numbers"),
 		mcp.WithNumber("a", mcp.Required(), mcp.Description("First number")),
 		mcp.WithNumber("b", mcp.Required(), mcp.Description("Second number")),
-	), func(ctx context.Context, request mcp.CallToolRequest) (*mcp.CallToolResult, error) {
+	), func(ctx context.Context, request mcp.CallToolRequest) (*mcp.CallToolResult, e  rror) {
 		a, err := request.RequireFloat("a")
 		if err != nil {
 			return mcp.NewToolResultError(fmt.Sprintf("invalid argument 'a': %v", err)), nil
